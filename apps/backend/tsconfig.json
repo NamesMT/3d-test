@@ -1,0 +1,14 @@
+{
+  "extends": "@local/tsconfig/base.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      "vitest"
+    ]
+  },
+  "exclude": ["dist", "node_modules"]
+}

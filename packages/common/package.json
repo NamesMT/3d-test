@@ -1,0 +1,22 @@
+{
+  "name": "@local/common",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./index.ts"
+    },
+    "./node": {
+      "import": "./node.ts"
+    }
+  },
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@local/tsconfig": "workspace:*",
+    "pathe": "^1.1.2"
+  }
+}
