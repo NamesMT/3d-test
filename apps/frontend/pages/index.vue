@@ -70,8 +70,7 @@ onMounted(async () => {
 
 <template>
   <TresCanvas v-bind="gl" window-size>
-    <TresPerspectiveCamera ref="cameraRef" :position="[0, 4, 0]" :near="0.1" :far="10000" />
-    <!-- <OrbitControls /> -->
+    <TresPerspectiveCamera ref="cameraRef" :position="[0, 4, 0]" :look-at="[0, 0, 0]" :near="0.1" :far="10000" />
 
     <Suspense>
       <Islands :scale="0.1" :position="[0, -1.75, 1000]" receive-shadow />
