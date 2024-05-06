@@ -73,11 +73,11 @@ onMounted(async () => {
     <TresPerspectiveCamera ref="cameraRef" :position="[0, 4, 0]" :look-at="[0, 0, 0]" :near="0.1" :far="10000" />
 
     <Suspense>
-      <Islands :scale="0.1" :position="[0, -1.75, 1000]" receive-shadow />
+      <Islands :position="[0, 18, 0]" />
     </Suspense>
 
     <Suspense>
-      <Boat ref="boatRef" :scale="0.03" :position="[0, -1.8, 0]" :rotation="[0, 0.8, 0]" cast-shadow />
+      <Boat ref="boatRef" :scale="0.025" :position="[0, -0.85, 0]" :rotation="[0, 0.8, 0]" />
     </Suspense>
 
     <TresAmbientLight :intensity="2" />
