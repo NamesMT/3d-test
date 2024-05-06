@@ -18,7 +18,8 @@ const boatRef = shallowRef()
 const cameraRef = shallowRef()
 
 onMounted(async () => {
-  await new Promise(r => setTimeout(r, 2000))
+  while (!boatRef.value)
+    await new Promise(r => setTimeout(r, 1000))
 
   const coronaSafetyDistance = 20
   const temp = new Vector3()
