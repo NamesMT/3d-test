@@ -1,17 +1,25 @@
 <script setup lang="ts">
 const {
+  path,
   castShadow,
   receiveShadow,
 } = defineProps<{
+  path: string
   castShadow?: boolean
   receiveShadow?: boolean
 }>()
 
-const { scene: model } = await useGLTF('/3d/chickenIslands.glb', { draco: true })
+const root = shallowRef()
+const gltf = shallowRef()
+defineExpose({ root })
+
+gltf.value = await useGLTF(path, { draco: true })
+
+const { scene: model } = gltf.value
 
 recursiveShadow(model, { cast: castShadow, receive: receiveShadow })
 </script>
 
 <template>
-  <ModelBase path="/3d/chickenIslands.glb" v-bind="{ castShadow, receiveShadow }" />
+  <primitive ref="root" :object="model" />
 </template>
